@@ -37,8 +37,10 @@ func main() {
 		wantedHost := svchost.Hostname(args[1])
 		token, ok := creds[wantedHost]
 		if !ok {
-			fmt.Fprintf(os.Stderr, "No credentials for %s are defined via environment variables.\n", svchost.ForDisplay(args[1]))
-			os.Exit(1)
+			// No stored credentials for a host is a non-error case; respond
+			// with an empty credentials object.
+			os.Stdout.WriteString("{}\n")
+			os.Exit(0)
 		}
 		result := resultJSON{token}
 		resultJSON, err := json.Marshal(result)
