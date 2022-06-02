@@ -1,5 +1,13 @@
 # Terraform Credentials from the Environment
 
+---
+
+**NOTE:** Largely-equivalent functionality to this credentials helper is built in to Terraform v1.2 and later as a standard feature. Therefore this credentials helper is useful only for earlier versions of Terraform that didn't have that built in.
+
+I recommend using Terraform v1.2 or later instead of adopting this credentials helper. I have no plans to develop this credentials helper any further or to produce any new releases of it.
+
+---
+
 `terraform-credentials-env` is a Terraform "credentials helper" plugin that
 allows providing credentials for
 [Terraform-native services](https://www.terraform.io/docs/internals/remote-service-discovery.html)
