@@ -13,6 +13,8 @@ allows providing credentials for
 [Terraform-native services](https://www.terraform.io/docs/internals/remote-service-discovery.html)
 (private module registries, Terraform Cloud, etc) via environment variables.
 
+*NOTE:* The features provided by this credentials helper are implemented in Terraform since version 1.2 without additional configuration. Users of terraform-credentials-env should note that environment variable credentials are prioritized over CLI configuration credentials blocks of like host names because the opposite was true when using this credentials helper.
+
 To use it,
 [download a release archive](https://github.com/apparentlymart/terraform-credentials-env/releases)
 and extract it into the `~/.terraform.d/plugins` directory where Terraform
